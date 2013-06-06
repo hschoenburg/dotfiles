@@ -1,0 +1,28 @@
+# ~/.teamocil/yerdle.yml
+session:
+  name: yerdle
+  windows:
+    - name: editor
+      root: "/vagrant"
+      panes:
+        - cmd: vim 
+    - name: console
+      layout: even-vertical
+      root: "/vagrant"
+      panes:
+        - cmd: sleep 10 && zeus c
+          focus: true
+        - cmd: mongo yerdle_development
+    - name: lservers
+      layout: main-horizontal
+      root: "/vagrant"
+      panes:
+        - cmd: DEBUG=1 PORT=5000 RACK_ENV=development foreman start -c
+        - cmd: zeus start
+          focus: true
+    - name: logs
+      layout: even-horizontal
+      root: "/vagrant"
+      panes:
+        - cmd: tail -f log/development.log | grep -v --line-buffered delayed_jobs | grep -e ^$ -v
+        - cmd: tail -f /usr/local/var/log/mongodb/mongodb.log
