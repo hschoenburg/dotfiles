@@ -22,5 +22,5 @@ fi
 
 # [[ -s /usr/local/bin/src-hilite-lesspipe.sh ]] && export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS="-R#3m~gQ"
-export EDITOR="/usr/local/bin/vim"
+# export EDITOR="/usr/local/bin/vim"
 

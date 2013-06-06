@@ -41,6 +41,9 @@ task :install do
       link_file(file)
     end
   end
+
+  puts "Great, now install vundle:"
+  puts "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
 end
 
 def replace_file(file)

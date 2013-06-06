@@ -1,5 +1,14 @@
 source ~/.git-completion.bash
 
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+  platform='linux'
+elif [[ "$unamestr" == 'FreeBSD' ]]; then
+  platform='freebsd'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+  platform='osx'
+fi
+
 alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
 
 # PGSQL
@@ -45,8 +54,10 @@ alias bzip2='pbzip2'
 alias tar='COPYFILE_DISABLE=true tar' 
 
 # Use my vim
-alias vi='/usr/local/bin/vim'
-alias vim='/usr/local/bin/vim'
+if [[ $platform == 'osx' ]]; then
+  alias vi='/usr/local/bin/vim'
+  alias vim='/usr/local/bin/vim'
+end
 
 # Go to the source dir for a given bundle or gem
 bundlecd () { cd `bundle show $*`; }
@@ -72,9 +83,6 @@ complete -C rails-complete -o default rails
 
 # Teamocil
 complete -W "$(teamocil --list)" teamocil
-
-# Ruby Version Manager
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
