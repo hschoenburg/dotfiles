@@ -26,6 +26,12 @@ Bundle 'airblade/vim-gitgutter'
 highlight clear SignColumn
 Bundle 'kien/ctrlp.vim'
 nmap <leader>t :CtrlP<CR>
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+let g:ctrlp_max_files=32768
 
 Bundle 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
