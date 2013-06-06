@@ -57,7 +57,7 @@ alias tar='COPYFILE_DISABLE=true tar'
 if [[ $platform == 'osx' ]]; then
   alias vi='/usr/local/bin/vim'
   alias vim='/usr/local/bin/vim'
-end
+fi
 
 # Go to the source dir for a given bundle or gem
 bundlecd () { cd `bundle show $*`; }

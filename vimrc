@@ -40,7 +40,7 @@ Bundle 'jpalardy/vim-slime'
 " Slime plugin config
 let g:slime_target = "tmux"
 
-Bundle 'rson/vim-conque'
+Bundle 'vim-scripts/Conque-Shell'
 
 Bundle 'yerdle/vim-ruby-conque'
 " Bundle 'skwp/vim-ruby-conque'
