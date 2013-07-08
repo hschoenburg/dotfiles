@@ -7,6 +7,8 @@
 # install it:
 #   curl -sL https://raw.github.com/gist/2108403/hack.sh | sh
 #
+# echo "Show all files in finder"
+# defaults write com.apple.finder AppleShowAllFiles YES
 
 echo "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3

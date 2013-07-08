@@ -15,7 +15,7 @@ desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README.md LICENSE].include? file
+    next if %w[Rakefile README.md LICENSE bundleinstall.vim].include? file
  
     dotfile = ".#{file.sub('.erb', '')}" 
     if File.exist?(File.join(ENV['HOME'], dotfile))
@@ -42,9 +42,14 @@ task :install do
     end
   end
 
-  puts "Great, now install vundle:"
-  puts "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
-  puts
+  # Clone vundle to get vim going
+  if (Dir.entries(File.join(ENV['HOME'], ".vim/bundle/vundle")) - %w{ . .. }).empty?
+    print "Installing vundle"
+    system %Q{git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle}
+  end
+
+  print "Updating vundle"
+  system %{vim -s bundleinstall.vim}
 end
 
 def replace_file(file)
