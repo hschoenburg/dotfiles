@@ -17,6 +17,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
 Bundle 'slim-template/vim-slim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
@@ -36,12 +38,6 @@ let g:ctrlp_max_files=32768
 Bundle 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
 
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Lokaltog/vim-powerline'
-" Powerline font
-let g:Powerline_symbols = 'fancy'
-
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'jpalardy/vim-slime'
 " Slime plugin config
 let g:slime_target = "tmux"
