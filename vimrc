@@ -22,10 +22,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
 
-" Fix gitgutter column
-highlight clear SignColumn
 Bundle 'kien/ctrlp.vim'
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
@@ -38,22 +35,15 @@ let g:ctrlp_max_files=32768
 Bundle 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
 
-Bundle 'jpalardy/vim-slime'
-" Slime plugin config
-let g:slime_target = "tmux"
+Bundle 'benmills/vimux'
+Bundle 'skalnik/vim-vroom'
+let g:vroom_use_vimux=1
+let g:vroom_use_spring=1
 
-Bundle 'basepi/vim-conque'
-Bundle 'yerdle/vim-ruby-conque'
-" Bundle 'skwp/vim-ruby-conque'
-
-" Pass --drb option to ruby conque
-let g:ruby_conque_rspec_runner = "zeus test"
 " Cmd-Shift-R for RSpec
-nmap <silent> <leader>r :call RunRspecCurrentFileConque()<CR>
+nmap <silent> <leader>r :VroomRunCurrentFile<CR>
 " " Cmd-Shift-L for RSpec Current Line
-nmap <silent> <leader>l :call RunRspecCurrentLineConque()<CR>
-" " ,Cmd-R for Last conque command
-nmap <silent> <leader><D-R> :call RunLastConqueCommand()<CR>
+nmap <silent> <leader>l :VroomRunCurrentLine<CR>
 
 filetype plugin indent on       " load file type plugins + indentation
 

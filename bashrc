@@ -75,14 +75,11 @@ PS1="$SI\w$NM"'$(__git_ps1 " %s")'"$ $IN"
 #I hate noise
 set bell-style visible
 
-# Rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # Tab completion in rails shell
 complete -C rails-complete -o default rails
 
 # Teamocil
-complete -W "$(teamocil --list)" teamocil
+#complete -W "$(teamocil --list)" teamocil
 
 # For tmux: Predictable SSH authentication socket location.
 SOCK="/tmp/ssh-agent-$USER-tmux"
