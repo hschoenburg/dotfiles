@@ -1,29 +1,41 @@
 set nocompatible                " choose no compatibility with legacy vi
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
 
 " Set <leader> key to ,
 let mapleader = ","
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
-Bundle 'mileszs/ack.vim'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'mileszs/ack.vim'
 nmap <leader>f :Ack 
 
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-haml'
-Bundle 'slim-template/vim-slim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rvm'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-haml'
+Plugin 'slim-template/vim-slim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'benmills/vimux'
+Plugin 'skalnik/vim-vroom'
+let g:vroom_use_vimux=1
+let g:vroom_use_spring=1
+
+map <leader>r :VroomRunTestFile<CR>
+map <leader>l :VroomRunNearestTest<CR>
+
+Plugin 'kien/ctrlp.vim'
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
 let g:ctrlp_custom_ignore = {
@@ -32,20 +44,16 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_max_files=32768
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
 
-Bundle 'benmills/vimux'
-Bundle 'skalnik/vim-vroom'
-let g:vroom_use_vimux=1
-let g:vroom_use_spring=1
+Plugin 'jpalardy/vim-slime'
+" Slime plugin config
+let g:slime_target = "tmux"
 
-" Cmd-Shift-R for RSpec
-nmap <silent> <leader>r :VroomRunCurrentFile<CR>
-" " Cmd-Shift-L for RSpec Current Line
-nmap <silent> <leader>l :VroomRunCurrentLine<CR>
-
-filetype plugin indent on       " load file type plugins + indentation
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on
 
 " http://slinky.imukuppi.org/zenburnpage/
 let g:zenburn_high_Contrast = 1
@@ -56,11 +64,9 @@ colors zenburn
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
-"set number                       Enable line numbers
 
 set visualbell t_vb=                    " Silence bells
 set nostartofline                       " When paging, don't go to the start of the line
