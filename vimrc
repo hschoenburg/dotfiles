@@ -94,7 +94,7 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
+"set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 "" Dealing with unsaved buffers

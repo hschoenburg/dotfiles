@@ -29,13 +29,10 @@ alias esstop='kill `cat /usr/local/var/log/elasticsearch/elasticsearch.pid`'
 # Redis
 alias rstart='redis-server /usr/local/etc/redis.conf'
 
-alias be='sudo -i -u'
-alias og='cd ~/Rails/ourgoods'
-
 # Git stuff
 alias gl='git pull'
 alias gp='git push'
-alias gst='git status'
+alias gs='git status'
 alias gct='git commit'
 alias gph='git push heroku'
 alias stage='git push staging dev:master'

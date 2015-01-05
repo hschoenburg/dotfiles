@@ -8,7 +8,7 @@
   pl = pull
   ps = push
   plre = pull --rebase
-  st = status
+  st = status -sb
   out = log origin..HEAD
   br = branch
   co = checkout
@@ -36,5 +36,10 @@
 [core]
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore
+	mergeoptions = --no-edit
 [push]
-	default = matching
+	default = current
+[github]
+	user = tashian
+[ghi]
+	token = e036feaed374c566f4ee9aed5b907e0bcdab93c7
