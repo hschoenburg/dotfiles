@@ -1,41 +1,35 @@
 set nocompatible                " choose no compatibility with legacy vi
 filetype off                   " required!
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
 
 " Set <leader> key to ,
 let mapleader = ","
 
-" let Vundle manage Vundle
-" required! 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'mileszs/ack.vim'
+call plug#begin('~/.vim/plugged')
+
+Plug 'mileszs/ack.vim'
 nmap <leader>f :Ack 
 
-Plugin 'tpope/vim-rvm'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-haml'
-Plugin 'slim-template/vim-slim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-rvm'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-haml'
+Plug 'slim-template/vim-slim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 
-Plugin 'benmills/vimux'
-Plugin 'skalnik/vim-vroom'
+Plug 'benmills/vimux'
+Plug 'skalnik/vim-vroom'
 let g:vroom_use_vimux=1
 let g:vroom_use_spring=1
 
 map <leader>r :VroomRunTestFile<CR>
 map <leader>l :VroomRunNearestTest<CR>
 
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
 let g:ctrlp_custom_ignore = {
@@ -44,15 +38,16 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_max_files=32768
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
 
-Plugin 'jpalardy/vim-slime'
+Plug 'jpalardy/vim-slime'
 " Slime plugin config
 let g:slime_target = "tmux"
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
+
 filetype plugin indent on
 
 " http://slinky.imukuppi.org/zenburnpage/
@@ -80,6 +75,7 @@ set statusline+=%10((%l,%c)%)\            " line and column
 set statusline+=%P                        " percentage of file
 set scrolloff=5                         " don't scroll any closer to top/bottom
 set backspace=2                         " Set for maximum backspace smartness
+set nu
 
 " Invisible character colors
 highlight NonText guifg=#4a4a59

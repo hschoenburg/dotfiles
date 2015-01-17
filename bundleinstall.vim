@@ -1,3 +1,3 @@
-:BundleInstall!
+:PlugInstall
 :q!
 :q!

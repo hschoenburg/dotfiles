@@ -25,3 +25,5 @@ export LESS="-R#3m~gQ"
 export GOPATH="$HOME/go"
 # export EDITOR="/usr/local/bin/vim"
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

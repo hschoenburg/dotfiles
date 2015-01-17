@@ -42,13 +42,14 @@ task :install do
     end
   end
 
-  # Clone vundle to get vim going
-  if (Dir.entries(File.join(ENV['HOME'], ".vim/bundle/vundle")) - %w{ . .. }).empty?
-    print "Installing vundle"
-    system %Q{git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle}
+  # Clone vim-plug to get vim going
+  if (Dir.entries(File.join(ENV['HOME'], ".vim/plugins")) - %w{ . .. }).empty?
+    print "Installing vim-plug"
+    system %Q{mkdir -p ~/.vim/autoload}
+    system %Q{curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim}
   end
 
-  print "Updating vundle"
+  print "Updating plugins"
   system %{vim -s bundleinstall.vim}
 end
 

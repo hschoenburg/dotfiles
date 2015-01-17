@@ -52,8 +52,8 @@ alias tar='COPYFILE_DISABLE=true tar'
 
 # Use my vim
 if [[ $platform == 'osx' ]]; then
-  alias vi='/usr/local/bin/vim'
-  alias vim='/usr/local/bin/vim'
+  alias vi='/usr/local/bin/nvim'
+  alias vim='/usr/local/bin/nvim'
 fi
 
 # Go to the source dir for a given bundle or gem
@@ -90,6 +90,4 @@ fi
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
 
-# ZZZZZZZZZZZ
-. $HOME/dotfiles/z/z.sh
-
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
