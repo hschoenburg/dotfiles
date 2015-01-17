@@ -43,7 +43,7 @@ task :install do
   end
 
   # Clone vim-plug to get vim going
-  if (Dir.entries(File.join(ENV['HOME'], ".vim/autoload")) - %w{ . .. }).empty?
+  if (Dir.entries(File.join(ENV['HOME'], ".vim/autoload")) - %w{ . .. .gitkeep }).empty?
     print "Installing vim-plug"
     system %Q{mkdir -p ~/.vim/autoload}
     system %Q{curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim}
