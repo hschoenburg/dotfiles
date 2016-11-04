@@ -1,0 +1,15 @@
+windows:
+  - name: editor
+    root: "~/Work/ecoToo"
+    panes:
+      - vim 
+  - name: specs
+    root: "~/Work/ecoToo"
+    panes:
+      - sleep 10 & mocha --recursive --require specs/helpers/spec_helper.js specs/
+  - name: servers
+    layout: main-horizontal
+    root: "~/Work/ecoToo"
+    panes:
+      - NODE_ENV=development node app.js | bunyan -o short
+      - mongod --dbpath ./mongodata

@@ -5,29 +5,22 @@ filetype off                   " required!
 " Set <leader> key to ,
 let mapleader = ","
 
+nmap <leader>f :Ack 
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
-nmap <leader>f :Ack 
-
 Plug 'tpope/vim-rvm'
-Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-haml'
-Plug 'slim-template/vim-slim'
-Plug 'kchmck/vim-coffee-script'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-
+Plug 'scrooloose/nerdtree'
+Plug 'othree/yajs.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'benmills/vimux'
 Plug 'skalnik/vim-vroom'
-let g:vroom_use_vimux=1
-let g:vroom_use_spring=1
-
-map <leader>r :VroomRunTestFile<CR>
-map <leader>l :VroomRunNearestTest<CR>
 
 Plug 'kien/ctrlp.vim'
 nmap <leader>t :CtrlP<CR>
@@ -38,7 +31,6 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_max_files=32768
 
-Plug 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
 
 Plug 'jpalardy/vim-slime'
@@ -79,7 +71,7 @@ set nu
 
 " Invisible character colors
 highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4
+highlight SpecialKey guifg=#4a4a59
 
 "" Whitespace
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)

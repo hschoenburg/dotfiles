@@ -27,8 +27,8 @@
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 [user]
-	name = tashian
-	email = carl@tashian.com
+	name = hschoenburg
+	email = hschoenburg@gmail.com
 [color]
 	diff = auto
 	status = auto

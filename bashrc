@@ -9,6 +9,16 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
   platform='osx'
 fi
 
+alias tlm='cd ~/Work/TLM'
+
+alias stripcolors='sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
+
+alias droplet='ssh demo@159.203.248.246'
+alias ironwood='ssh demo@198.199.114.132'
+alias newleaf='ssh demo@159.203.220.155'
+alias tlmworks='ssh demo@192.241.193.210'
+alias airbnb='ssh demo@45.55.29.238'
+
 alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
 
 # PGSQL
@@ -49,12 +59,6 @@ alias bzip2='pbzip2'
 
 # Prevent resource forks from being tarred
 alias tar='COPYFILE_DISABLE=true tar' 
-
-# Use my vim
-if [[ $platform == 'osx' ]]; then
-  alias vi='/usr/local/bin/nvim'
-  alias vim='/usr/local/bin/nvim'
-fi
 
 # Go to the source dir for a given bundle or gem
 bundlecd () { cd `bundle show $*`; }
