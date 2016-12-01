@@ -15,14 +15,14 @@ Plug 'tpope/vim-rails'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 Plug 'othree/yajs.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'benmills/vimux'
 Plug 'skalnik/vim-vroom'
-
 Plug 'kien/ctrlp.vim'
+
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
 let g:ctrlp_custom_ignore = {

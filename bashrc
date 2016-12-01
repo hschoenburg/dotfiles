@@ -48,7 +48,6 @@ alias gph='git push heroku'
 alias stage='git push staging dev:master'
 alias r='rails'
 alias dh='cd ~/Sites/dreamhost-files'
-alias ls='ls -G'
 # Less is more
 alias more='less'
 alias dhdeploy='ssh carl@tashian.com git pull'
@@ -71,7 +70,7 @@ HI="\[\033[0;37m\]" #change this for letter colors
 HII="\[\033[0;31m\]" #change this for letter colors
 SI="\[\033[0;33m\]" #this is for the current directory
 IN="\[\033[0m\]"
-PS1="$SI\w$NM"'$(__git_ps1 " %s")'"$ $IN"
+PS1="\H > \u $SI\w$NM"'$(__git_ps1 " %s")'"$ $IN"
 
 #I hate noise
 set bell-style visible
