@@ -1,4 +1,4 @@
-My dotfiles.
+Dotfiles, forked most gratefully from @tashian
 
 Install with `rake install`.
 
