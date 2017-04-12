@@ -9,15 +9,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
   platform='osx'
 fi
 
-alias tlm='cd ~/Work/TLM'
-
 alias stripcolors='sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
-
-alias droplet='ssh demo@159.203.248.246'
-alias ironwood='ssh demo@198.199.114.132'
-alias newleaf='ssh demo@159.203.220.155'
-alias tlmworks='ssh demo@192.241.193.210'
-alias airbnb='ssh demo@45.55.29.238'
 
 alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
 
@@ -70,7 +62,7 @@ HI="\[\033[0;37m\]" #change this for letter colors
 HII="\[\033[0;31m\]" #change this for letter colors
 SI="\[\033[0;33m\]" #this is for the current directory
 IN="\[\033[0m\]"
-PS1="\H > \u $SI\w$NM"'$(__git_ps1 " %s")'"$ $IN"
+PS1="\u $SI\w$NM"'$(__git_ps1 " %s")'"$ $IN"
 
 #I hate noise
 set bell-style visible

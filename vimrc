@@ -10,17 +10,13 @@ nmap <leader>f :Ack
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-rvm'
-Plug 'tpope/vim-rails'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
 Plug 'othree/yajs.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'benmills/vimux'
-Plug 'skalnik/vim-vroom'
 Plug 'kien/ctrlp.vim'
 
 nmap <leader>t :CtrlP<CR>
