@@ -11,6 +11,11 @@ fi
 
 alias stripcolors='sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 
+#Node Stuff
+
+alias sqlz='sequelize'
+
+
 alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
 
 # PGSQL
@@ -42,7 +47,6 @@ alias r='rails'
 alias dh='cd ~/Sites/dreamhost-files'
 # Less is more
 alias more='less'
-alias dhdeploy='ssh carl@tashian.com git pull'
 
 # Parallel versions of gzip and bzip2
 alias gzip='pigz'

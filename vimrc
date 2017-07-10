@@ -9,15 +9,16 @@ nmap <leader>f :Ack
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'scrooloose/nerdtree'
 Plug 'mileszs/ack.vim'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
 Plug 'othree/yajs.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'benmills/vimux'
 Plug 'kien/ctrlp.vim'
+Plug 'Valloric/YouCompleteMe'
 
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
