@@ -18,7 +18,6 @@ Plug 'othree/yajs.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'benmills/vimux'
 Plug 'kien/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe'
 
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
@@ -47,6 +46,8 @@ colors zenburn
 " nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
+set autoread 
 
 syntax enable
 set encoding=utf-8
@@ -109,8 +110,6 @@ nmap <Tab><Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 map <C-h> <C-w>h
 map <C-l> <C-w>l
-
-imap jj <Esc>
 
 map vv :vsplit<CR>
 map ss :split<CR>
