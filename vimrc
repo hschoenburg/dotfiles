@@ -18,6 +18,11 @@ Plug 'othree/yajs.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'benmills/vimux'
 Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf'
 
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
@@ -32,6 +37,42 @@ nmap <leader>n :NERDTreeToggle<CR>
 Plug 'jpalardy/vim-slime'
 " Slime plugin config
 let g:slime_target = "tmux"
+
+" Ale config
+let g:ale_sign_column_always = 1
+let g:ale_sign_warning = '--'
+
+let g:ale_linters_explicit = 1
+let g:ale_fixers = {
+      \   'go': ['gofmt'],
+      \   'javascript': ['standard'],
+      \   'jsx': ['standard'],
+      \   'typescript.tsx': ['tslint'],
+      \   '.ts': ['tslint'],
+      \   'typescript': ['tslint'],
+      \   'tsx': ['prettier'],
+      \   'css': ['prettier'],
+      \   'html': ['prettier'],
+      \   'scss': ['prettier'],
+      \   'sass': ['prettier'],
+      \   'markdown': ['prettier'],
+      \}
+
+let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
+let g:ale_linters = {
+      \   'go': ['gofmt'],
+      \   'javascript': ['standard'],
+      \   'json': ['jsonlint'],
+      \   'jsx': ['standard'],
+      \   'typescript': ['tsserver'],
+      \   'tsx': ['tsserver'],
+      \   'css': ['stylelint'],
+      \   'html': ['stylelint'],
+      \   'scss': ['stylelint'],
+      \   'sass': ['stylelint'],
+      \   'markdown': ['stylelint'],
+      \}
+
 
 " All of your Plugins must be added before the following line
 call plug#end()
