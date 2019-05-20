@@ -24,9 +24,20 @@ alias gffm='git fetch && git merge --ff-only'
 
 alias stripcolors='sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 
-#Node Stuff
+alias weechat='ssh root@hans.digital -t screen -D -RR weechat weechat-curses'
 
-alias sqlz='sequelize'
+alias ccc='clear'
+
+
+export GOPATH=$HOME/go-work
+export GOROOT=/usr/local/opt/go/libexec
+export GOBIN=$GOPATH/bin
+export GO111MODULE=on
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# Go shortcuts
+alias gw='cd ~/go-work/src/github.com/'
 
 
 alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
@@ -50,6 +61,8 @@ alias esstop='kill `cat /usr/local/var/log/elasticsearch/elasticsearch.pid`'
 alias rstart='redis-server /usr/local/etc/redis.conf'
 
 # Git stuff
+
+alias 'gffm'='git fetch && git merge --ff-only'
 alias gl='git pull'
 alias gp='git push'
 alias gs='git status'

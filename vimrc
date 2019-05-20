@@ -3,9 +3,11 @@ filetype off                   " required!
 
 
 " Set <leader> key to ,
-let mapleader = ","
+let mapleader = ','
 
 nmap <leader>f :Ack 
+nmap <leader>s :Files
+nmap <leader>af :ALEFix
 
 call plug#begin('~/.vim/plugged')
 
@@ -21,28 +23,21 @@ Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
-Plug 'junegunn/fzf.vim'
-Plug '/usr/local/opt/fzf'
 Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries'}
-
 
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
+"
 let g:ctrlp_max_files=32768
 
 nmap <leader>n :NERDTreeToggle<CR>
 
-Plug 'jpalardy/vim-slime'
-" Slime plugin config
-let g:slime_target = "tmux"
+call plug#end()
 
 " Ale config
 let g:ale_sign_column_always = 1
 let g:ale_sign_warning = '--'
+let g:ale_fix_on_save = 1
 
 let g:ale_linters_explicit = 1
 let g:ale_fixers = {
@@ -73,12 +68,12 @@ let g:ale_linters = {
       \   'html': ['stylelint'],
       \   'scss': ['stylelint'],
       \   'sass': ['stylelint'],
-      \   'markdown': ['stylelint'],
-      \}
+      \   'markdown': ['prettier'],
+      \   '.md': ['prettier'],
+      \ }
 
 
 " All of your Plugins must be added before the following line
-call plug#end()
 
 filetype plugin indent on
 
