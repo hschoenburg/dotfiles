@@ -12,13 +12,13 @@ fi
 #Golang stuff
 
 export GOPATH=$HOME/Work/Go
-# export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export GO111MODULE='on'
 
-alias gw='cd ~/Work/Go/src/github.com'
+alias gw='cd $GOPATH'
 
 alias gffm='git fetch && git merge --ff-only'
 
@@ -27,14 +27,6 @@ alias stripcolors='sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias weechat='ssh root@hans.digital -t screen -D -RR weechat weechat-curses'
 
 alias ccc='clear'
-
-
-export GOPATH=$HOME/go-work
-export GOROOT=/usr/local/opt/go/libexec
-export GOBIN=$GOPATH/bin
-export GO111MODULE=on
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
 
 # Go shortcuts
 alias gw='cd ~/go-work/src/github.com/'
