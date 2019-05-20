@@ -9,6 +9,19 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
   platform='osx'
 fi
 
+#Golang stuff
+
+export GOPATH=$HOME/Work/Go
+# export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+export GO111MODULE='on'
+
+alias gw='cd ~/Work/Go/src/github.com'
+
+alias gffm='git fetch && git merge --ff-only'
+
 alias stripcolors='sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 
 #Node Stuff
@@ -90,3 +103,4 @@ fi
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -23,6 +23,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
+Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries'}
+
 
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
@@ -56,6 +58,7 @@ let g:ale_fixers = {
       \   'scss': ['prettier'],
       \   'sass': ['prettier'],
       \   'markdown': ['prettier'],
+      \   '.md': ['prettier'],
       \}
 
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
