@@ -18,7 +18,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export GO111MODULE='on'
 
-alias gw='cd $GOPATH'
+alias gw='cd $GOPATH/src/github.com'
 
 alias gffm='git fetch && git merge --ff-only'
 
@@ -27,10 +27,6 @@ alias stripcolors='sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias weechat='ssh root@hans.digital -t screen -D -RR weechat weechat-curses'
 
 alias ccc='clear'
-
-# Go shortcuts
-alias gw='cd ~/go-work/src/github.com/'
-
 
 alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
 

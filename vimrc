@@ -72,6 +72,7 @@ let g:ale_linters = {
       \   '.md': ['prettier'],
       \ }
 
+let g:go_def_mode='godef'
 
 " All of your Plugins must be added before the following line
 
