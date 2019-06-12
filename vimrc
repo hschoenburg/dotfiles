@@ -74,6 +74,9 @@ let g:ale_linters = {
 
 let g:go_def_mode='godef'
 
+let NERDTreeShowHidden=1
+
+
 " All of your Plugins must be added before the following line
 
 filetype plugin indent on
