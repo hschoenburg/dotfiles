@@ -8,6 +8,7 @@ let mapleader = ','
 nmap <leader>f :Ack 
 nmap <leader>s :Files
 nmap <leader>af :ALEFix
+nmap <leader>gb :GoBuild
 
 call plug#begin('~/.vim/plugged')
 
@@ -37,7 +38,7 @@ call plug#end()
 " Ale config
 let g:ale_sign_column_always = 1
 let g:ale_sign_warning = '--'
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 let g:ale_linters_explicit = 1
 let g:ale_fixers = {
@@ -72,7 +73,11 @@ let g:ale_linters = {
       \   '.md': ['prettier'],
       \ }
 
+" vim-go config
 let g:go_def_mode='godef'
+let g:go_gocode_propose_source = 1
+autocmd BufWritePost *.go silent! GoBuild -i
+
 
 let NERDTreeShowHidden=1
 
