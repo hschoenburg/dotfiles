@@ -24,12 +24,14 @@ Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
-Plug 'fatih/vim-go', { 'do': 'GoUpdateBinaries'}
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
 "
 let g:ctrlp_max_files=32768
+
+let g:go_def_mode = 'godef'
 
 nmap <leader>n :NERDTreeToggle<CR>
 
@@ -82,6 +84,7 @@ autocmd BufWritePost *.go silent! GoBuild -i
 let NERDTreeShowHidden=1
 
 
+
 " All of your Plugins must be added before the following line
 
 filetype plugin indent on
@@ -90,7 +93,7 @@ filetype plugin indent on
 let g:zenburn_high_Contrast = 1
 colors zenburn
 
-"" Show Invisibles
+" Show Invisibles
 " nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
