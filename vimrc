@@ -25,6 +25,7 @@ Plug 'mileszs/ack.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 nmap <leader>t :CtrlP<CR>
 " Sane Ignore For ctrlp
@@ -40,16 +41,14 @@ call plug#end()
 " Ale config
 let g:ale_sign_column_always = 1
 let g:ale_sign_warning = '--'
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 
 let g:ale_linters_explicit = 1
 let g:ale_fixers = {
       \   'go': ['gofmt'],
       \   'javascript': ['standard'],
       \   'jsx': ['standard'],
-      \   'typescript.tsx': ['tslint'],
-      \   '.ts': ['tslint'],
-      \   'typescript': ['tslint'],
+      \   'typescript': ['prettier'],
       \   'tsx': ['prettier'],
       \   'css': ['prettier'],
       \   'html': ['prettier'],
@@ -57,16 +56,17 @@ let g:ale_fixers = {
       \   'sass': ['prettier'],
       \   'markdown': ['prettier'],
       \   '.md': ['prettier'],
-      \}
+      \ }
 
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
+let g:ale_fixers_explicit = 1
+
 let g:ale_linters = {
       \   'go': ['gofmt'],
       \   'javascript': ['standard'],
       \   'json': ['jsonlint'],
       \   'jsx': ['standard'],
-      \   'typescript': ['tsserver'],
-      \   'tsx': ['tsserver'],
+      \   'typescript': ['prettier'],
       \   'css': ['stylelint'],
       \   'html': ['stylelint'],
       \   'scss': ['stylelint'],
@@ -74,6 +74,10 @@ let g:ale_linters = {
       \   'markdown': ['prettier'],
       \   '.md': ['prettier'],
       \ }
+
+let g:ale_typescript_tsserver_config_path = ''
+let g:ale_typescript_tsserver_executable = 'tsserver'
+let g:ale_typescript_tsserver_use_global = 0
 
 " vim-go config
 let g:go_def_mode='godef'
